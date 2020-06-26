@@ -7,6 +7,8 @@ struct TodoController: RouteCollection {
         todos.get(use: index)
         todos.post(use: create)
         todos.group(":todoID") { todo in
+            todo.get(use: show)
+            todo.put(use: update)
             todo.delete(use: delete)
         }
     }
